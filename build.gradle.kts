@@ -13,10 +13,11 @@ group = "app.necros"
 version = "0.0.1"
 
 application {
-    mainClass.set("app.necros.ApplicationKt")
-
-    val isDevelopment: Boolean = project.ext.has("development")
-    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
+//    mainClass.set("app.necros.ApplicationKt")
+    mainClass.set("io.ktor.server.netty.EngineMain")
+    
+//    val isDevelopment: Boolean = project.ext.has("development")
+//    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
 repositories {
@@ -29,6 +30,17 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
     implementation("ch.qos.logback:logback-classic:$logback_version")
+
+    implementation("org.postgresql:postgresql:42.3.1")
+    implementation("org.jetbrains.exposed:exposed-core:0.41.1")
+    implementation("org.jetbrains.exposed:exposed-dao:0.41.1")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.41.1")
+    
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    testImplementation("com.h2database:h2:2.2.224")
 }
+
+//val run by tasks.getting(JavaExec::class) {
+//    environment("KTOR_ENV","dev")
+//}
