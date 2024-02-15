@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "app.necros"
-version = "0.0.1"
+version = "0.0.2"
 
 application {
 //    mainClass.set("app.necros.ApplicationKt")
@@ -39,6 +39,30 @@ dependencies {
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
     testImplementation("com.h2database:h2:2.2.224")
+}
+
+ktor {
+    fatJar {
+        archiveFileName.set("necros-backend-$version-all.jar")
+    }
+    docker {
+        jreVersion.set(JavaVersion.VERSION_17)
+        imageTag.set("${project.version}")
+//        portMappings.set(listOf(
+//            io.ktor.plugin.features.DockerPortMapping(
+//                80,
+//                8080,
+//                io.ktor.plugin.features.DockerPortMappingProtocol.TCP
+//            )
+//        ))
+        externalRegistry.set(
+            io.ktor.plugin.features.DockerImageRegistry.dockerHub(
+                appName = provider { "necros-backend" },
+                username = providers.environmentVariable("DOCKER_HUB_USERNAME"),
+                password = providers.environmentVariable("DOCKER_HUB_PASSWORD")
+            )
+        )
+    }
 }
 
 //val run by tasks.getting(JavaExec::class) {
