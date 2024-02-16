@@ -1,6 +1,5 @@
 package app.necros
 
-import com.example.plugins.app.necros.configureRouting
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.*
 import io.ktor.server.plugins.contentnegotiation.ContentNegotiation

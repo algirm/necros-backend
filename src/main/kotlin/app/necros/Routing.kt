@@ -1,13 +1,10 @@
-package com.example.plugins.app.necros
+package app.necros
 
-import app.necros.DatabaseSingleton
-import app.necros.model.Wallet
 import app.necros.model.Wallets
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import kotlinx.serialization.json.buildJsonObject
 import org.jetbrains.exposed.sql.selectAll
 
 fun Application.configureRouting() {

@@ -32,6 +32,10 @@ set VARIABLE_NAME=value
 ### Server side config
 1. Setup env and docker-compose.yml
 ```renderscript
+IS_DEV=<true/false>
+PORT=<port>
+
+POSTGRES_HOST=<localhost/docker_service_db_name>
 POSTGRES_DB=<db_name>
 POSTGRES_USER=<db_user>
 POSTGRES_PASSWORD=<db_password>
