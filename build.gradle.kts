@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "app.necros"
-version = "0.0.3"
+version = "0.0.4"
 
 application {
 //    mainClass.set("app.necros.ApplicationKt")
@@ -64,7 +64,3 @@ ktor {
         )
     }
 }
-
-//val run by tasks.getting(JavaExec::class) {
-//    environment("KTOR_ENV","dev")
-//}
