@@ -10,7 +10,7 @@ import org.jetbrains.exposed.sql.selectAll
 fun Application.configureRouting() {
     routing {
         get("/") {
-            call.respondText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ❤\uFE0F❤\uFE0F❤\uFE0F\uFE0F❤\uFE0F❤\uFE0F I LOVE YOUUUU ❤\uFE0F❤\uFE0F❤\uFE0F\uFE0F❤\uFE0F❤\uFE0F", status = HttpStatusCode.OK)
+            call.respondText("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ❤\uFE0F❤\uFE0F❤\uFE0F❤\uFE0F\uFE0F❤\uFE0F❤\uFE0F I LOVE YOUUUU ❤\uFE0F❤\uFE0F❤\uFE0F❤\uFE0F\uFE0F❤\uFE0F❤\uFE0F", status = HttpStatusCode.OK)
         }
         get("/test-wallet") {
             val res = DatabaseSingleton.dbQuery {
