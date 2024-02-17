@@ -9,6 +9,9 @@ import org.jetbrains.exposed.sql.selectAll
 
 fun Application.configureRouting() {
     routing {
+        get("/") {
+            call.respondText("❤\uFE0F❤\uFE0F❤\uFE0F I LOVE YOUUUU ❤\uFE0F❤\uFE0F❤\uFE0F", status = HttpStatusCode.OK)
+        }
         get("/test-wallet") {
             val res = DatabaseSingleton.dbQuery {
                 Wallets.selectAll().map {
