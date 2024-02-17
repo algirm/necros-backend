@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "app.necros"
-version = "0.0.6"
+version = "0.0.7"
 
 application {
 //    mainClass.set("app.necros.ApplicationKt")
