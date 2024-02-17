@@ -9,7 +9,7 @@ import org.jetbrains.exposed.sql.selectAll
 
 fun Application.configureRouting() {
     routing {
-        get("/") {
+        get("/myhome") {
             call.respondText("❤\uFE0F❤\uFE0F❤\uFE0F I LOVE YOUUUU ❤\uFE0F❤\uFE0F❤\uFE0F", status = HttpStatusCode.OK)
         }
         get("/test-wallet") {

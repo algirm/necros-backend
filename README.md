@@ -79,3 +79,8 @@ docker-compose up -d
 ```renderscript
 docker-compose stop ktor && docker-compose rm -f ktor && docker rmi -f algirm/necros-backend:latest && docker-compose pull ktor && docker-compose up -d
 ```
+### *alternative* Build docker on server (without dockerhub)
+5. Clone git repo and create Dockerfile (outside repo directory)
+```renderscript
+
+```
